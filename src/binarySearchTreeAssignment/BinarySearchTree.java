@@ -268,6 +268,7 @@ public class BinarySearchTree<T extends Comparable<T>>
       return postOrderQueue.dequeue();
     else return null;
   }
+  
   public void printSideways(){
 	  printSideways(root,"");
   }
@@ -278,7 +279,9 @@ private void printSideways(BSTNode<T> tree, String indent) {
 		System.out.println(indent+tree.getInfo());
 		printSideways(tree.getLeft(),indent+"    ");
 	}
+	
 }
+
   public T leftMost(){
 	  BSTNode<T> tree=root;
 	  if (tree==null){
@@ -336,7 +339,7 @@ private void printSideways(BSTNode<T> tree, String indent) {
 	  }
 	  return check;
   }
-  public T secondLargest(){
+  public T getSecondLargest(){
 	  BSTNode<T> tree=root;
 	  BSTNode<T> parent=null;
 	  while(tree.getRight()!=null){
@@ -358,6 +361,15 @@ private void printSideways(BSTNode<T> tree, String indent) {
 	  }
 	  else{
 		  return parent.getInfo();
+	  }
+  }
+  public int height(){
+	  int currentMax;
+	  currentMax=recHeight(root,1);
+  }
+  private int recHeight(BSTNode tree,int max){
+	  if(tree.getLeft()!=null){
+		  max=recHeight(tree.getLeft(), max++);
 	  }
   }
 }
