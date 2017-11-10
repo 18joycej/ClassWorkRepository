@@ -348,7 +348,6 @@ private void printSideways(BSTNode<T> tree, String indent) {
 	  }
 	  if(tree.getLeft()!=null){
 		  tree=tree.getLeft();
-		  //return tree.getLeft().getInfo();
 		  if (tree.getRight()!=null){
 			  while(tree.getRight()!=null){
 				  tree=tree.getRight();
@@ -364,12 +363,25 @@ private void printSideways(BSTNode<T> tree, String indent) {
 	  }
   }
   public int height(){
-	  int currentMax;
-	  currentMax=recHeight(root,1);
+	  return recHeight(root,1);
   }
-  private int recHeight(BSTNode tree,int max){
+  private int recHeight(BSTNode<T> tree,int traversalNum){
+	  int leftMax=0;
+	  int rightMax=0;
 	  if(tree.getLeft()!=null){
-		  max=recHeight(tree.getLeft(), max++);
+		  leftMax=recHeight(tree.getLeft(), traversalNum++);
+	  }
+	  if(tree.getRight()!=null){
+		  rightMax=recHeight(tree.getRight(), traversalNum++);
+	  }
+	  if(leftMax>rightMax){
+		  return leftMax;
+	  }
+	  else if(rightMax>leftMax){
+		  return rightMax;
+	  }
+	  else{
+		  return rightMax;
 	  }
   }
 }
