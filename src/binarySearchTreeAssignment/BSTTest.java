@@ -13,6 +13,7 @@ public class BSTTest {
 		tree.add(90);
 		tree.add(80);
 		tree.add(100);
+		tree.add(110);
 		
 		tree.printSideways();
 		System.out.println("Height of tree: "+tree.height());

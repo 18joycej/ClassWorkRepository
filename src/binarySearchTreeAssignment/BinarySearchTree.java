@@ -369,10 +369,13 @@ private void printSideways(BSTNode<T> tree, String indent) {
 	  int leftMax=0;
 	  int rightMax=0;
 	  if(tree.getLeft()!=null){
-		  leftMax=recHeight(tree.getLeft(), traversalNum++);
+		  leftMax=recHeight(tree.getLeft(), traversalNum+1);
 	  }
 	  if(tree.getRight()!=null){
-		  rightMax=recHeight(tree.getRight(), traversalNum++);
+		  rightMax=recHeight(tree.getRight(), traversalNum+1);
+	  }
+	  if(tree.getRight()==null&&tree.getLeft()==null){
+		  return traversalNum;
 	  }
 	  if(leftMax>rightMax){
 		  return leftMax;
