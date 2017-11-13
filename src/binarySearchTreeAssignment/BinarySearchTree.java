@@ -4,6 +4,11 @@
 // Defines all constructs for a reference-based BST
 //----------------------------------------------------------------------------
 
+/*
+ * Modified by students:
+ * Joel Joyce
+ * Archie Zwerlein
+ */
 package binarySearchTreeAssignment;
 
 import queues.*;
@@ -423,27 +428,6 @@ private void printSideways(BSTNode<T> tree, String indent) {
 		  System.out.println(str);
 	  }
   }
-  /** reverse
-   * 
-   * @return
-   */
-  /*public BinarySearchTree<T> reverse() {
-	  BinarySearchTree<T> tree = new BinarySearchTree();
-	  tree.add(root.getInfo());
-	  BSTNode<T> revTree = tree.root;
-	  reverse(root, revTree);
-	  return tree;
-  }
-  private void reverse(BSTNode<T> tree, BSTNode<T> revTree) {
-	  if(tree.getLeft()!=null) {
-		  revTree.setRight(tree.getLeft());
-		  reverse(tree.getLeft(), revTree.getRight());
-	  }
-	  if(tree.getRight()!=null){
-		  revTree.setLeft(tree.getRight());
-		  reverse(tree.getRight(), revTree.getLeft());
-	  }
-  }*/
   /** public method reverse
    * 
    * @return BinarySearchTree<T> - returns a BinarySearchTree with all of the elements on the left mirrored onto the right, and vice versa.

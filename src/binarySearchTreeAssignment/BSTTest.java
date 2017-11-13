@@ -1,3 +1,7 @@
+/*
+ * @author Joel Joyce
+ * @author Archie Zwerlein
+ */
 package binarySearchTreeAssignment;
 
 public class BSTTest {
