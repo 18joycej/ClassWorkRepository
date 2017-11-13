@@ -387,4 +387,19 @@ private void printSideways(BSTNode<T> tree, String indent) {
 		  return rightMax;
 	  }
   }
+  public void printPaths(){
+	  printPaths(root,"");
+  }
+  public void printPaths(BSTNode<T> tree,String str){
+	  str=str+tree.getInfo();
+	  if(tree.getLeft()!=null){
+		  printPaths(tree.getLeft(),str+", ");
+	  }
+	  if(tree.getRight()!=null){
+		  printPaths(tree.getRight(),str+", ");
+	  }
+	  if(tree.getRight()==null && tree.getLeft()==null){
+		  System.out.println(str);
+	  }
+  }
 }

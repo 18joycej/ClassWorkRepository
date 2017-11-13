@@ -17,6 +17,8 @@ public class BSTTest {
 		
 		tree.printSideways();
 		System.out.println("Height of tree: "+tree.height());
+		System.out.println("All tree paths");
+		tree.printPaths();
 	}
 
 }
