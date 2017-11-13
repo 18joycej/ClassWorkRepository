@@ -16,6 +16,9 @@ public class BSTTest {
 		tree.add(110);
 		
 		tree.printSideways();
+		BinarySearchTree<Integer> reversed=tree.reverse();
+		reversed.printSideways();
+		
 		System.out.println("Height of tree: "+tree.height());
 		System.out.println("All tree paths");
 		tree.printPaths();

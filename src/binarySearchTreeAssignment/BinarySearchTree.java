@@ -406,7 +406,7 @@ private void printSideways(BSTNode<T> tree, String indent) {
    * 
    * @return
    */
-  public BinarySearchTree<T> reverse() {
+  /*public BinarySearchTree<T> reverse() {
 	  BinarySearchTree<T> tree = new BinarySearchTree();
 	  tree.add(root.getInfo());
 	  BSTNode<T> revTree = tree.root;
@@ -422,5 +422,28 @@ private void printSideways(BSTNode<T> tree, String indent) {
 		  revTree.setLeft(tree.getRight());
 		  reverse(tree.getRight(), revTree.getLeft());
 	  }
+  }*/
+  public BinarySearchTree<T> reverse(){
+	  BinarySearchTree<T> reversed=new BinarySearchTree<T>();
+	  this.reset(PREORDER);
+	  while (preOrderQueue.isEmpty()==false){
+		  reversed.add(preOrderQueue.dequeue());
+	  }
+	  reverse(reversed.getRoot());
+	  return reversed;
+  }
+  private void reverse(BSTNode<T> tree){
+	  if(tree.getLeft()!=null){
+		  reverse(tree.getLeft());
+	  }
+	  if(tree.getRight()!=null){
+		  reverse(tree.getRight());
+	  }
+	  BSTNode<T> temp=tree.getLeft();
+	  tree.setLeft(tree.getRight());
+	  tree.setRight(temp);
+  }
+  public BSTNode<T> getRoot(){
+	  return root;
   }
 }
