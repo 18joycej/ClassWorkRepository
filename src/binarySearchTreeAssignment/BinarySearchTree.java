@@ -339,6 +339,10 @@ private void printSideways(BSTNode<T> tree, String indent) {
 	  }
 	  return check;
   }
+  /**
+   * getSecondLargest
+   * @return T - returns the second largest value in the tree.
+   */
   public T getSecondLargest(){
 	  BSTNode<T> tree=root;
 	  BSTNode<T> parent=null;
@@ -362,9 +366,18 @@ private void printSideways(BSTNode<T> tree, String indent) {
 		  return parent.getInfo();
 	  }
   }
+  /**
+   * height
+   * @return integer - Returns the height of the tree (down to the deepest leaf)
+   */
   public int height(){
 	  return recHeight(root,1);
   }
+  /**
+   * 
+   * @param tree - The BSTNode that is being tested.
+   * @param traversalNum - The level of the node on the tree (for example, root = 1, its child would be 2).
+   */
   private int recHeight(BSTNode<T> tree,int traversalNum){
 	  int leftMax=0;
 	  int rightMax=0;
@@ -387,9 +400,17 @@ private void printSideways(BSTNode<T> tree, String indent) {
 		  return rightMax;
 	  }
   }
+  /** public method
+   * printPaths - Prints every branch of the tree, from the root to each leaf.
+   */
   public void printPaths(){
 	  printPaths(root,"");
   }
+  /**
+   * 
+   * @param tree - The BSTNode that the method uses to modify the str String.
+   * @param str - The string that is modified with each iteration of the method and printed out at the end.
+   */
   public void printPaths(BSTNode<T> tree,String str){
 	  str=str+tree.getInfo();
 	  if(tree.getLeft()!=null){
@@ -423,6 +444,10 @@ private void printSideways(BSTNode<T> tree, String indent) {
 		  reverse(tree.getRight(), revTree.getLeft());
 	  }
   }*/
+  /** public method reverse
+   * 
+   * @return BinarySearchTree<T> - returns a BinarySearchTree with all of the elements on the left mirrored onto the right, and vice versa.
+   */
   public BinarySearchTree<T> reverse(){
 	  BinarySearchTree<T> reversed=new BinarySearchTree<T>();
 	  this.reset(PREORDER);
@@ -432,6 +457,10 @@ private void printSideways(BSTNode<T> tree, String indent) {
 	  reverse(reversed.getRoot());
 	  return reversed;
   }
+  /**
+   * 
+   * @param tree - the BSTNode that the method will work with.
+   */
   private void reverse(BSTNode<T> tree){
 	  if(tree.getLeft()!=null){
 		  reverse(tree.getLeft());
